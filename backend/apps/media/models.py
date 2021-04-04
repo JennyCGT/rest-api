@@ -1,8 +1,8 @@
 from django.db import models
 from django.conf import settings
-
+from timestampedmodel import TimestampedModel
 # Create your models here.
-class Media(models.Model):
+class Media(TimestampedModel, models.Model   ):
     title = models.CharField(max_length=20,null=True,blank=True)
     description = models.CharField(max_length=200,null=True,blank=True)
     image = models.ImageField(upload_to='image', null=True, max_length=255)

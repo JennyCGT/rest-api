@@ -15,7 +15,7 @@ class GenderChoice(models.TextChoices):
 class User(AbstractUser, TimestampedModel):
     first_name = models.CharField(max_length=50,blank=True)
     last_name = models.CharField(max_length=50,blank=True)
-    username = None # remove username field, we will use email as unique identifier
+    username = models.CharField(max_length=50,blank=True)
     email = models.EmailField(unique=True, null=True, db_index=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)

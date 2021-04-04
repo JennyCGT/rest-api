@@ -1,5 +1,4 @@
 from django.contrib.auth.models import BaseUserManager
-from . import constants as user_constants
 
 class UserManager(BaseUserManager):
     def create_user(self, email, password, **extra_fields):

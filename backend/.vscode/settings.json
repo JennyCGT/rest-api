@@ -1,0 +1,4 @@
+{
+    "omnisharp.enableRoslynAnalyzers": true,
+    "python.pythonPath": "c:\\Users\\Jenny\\Documents\\JRTEC\\GITHUB\\rest-api\\env\\Scripts\\python.exe"
+}
