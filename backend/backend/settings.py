@@ -155,8 +155,23 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CORS_ORIGIN_ALLOW_ALL = True
+if 'RDS_DB_NAME' in os.environ:     
+    CORS_ORIGIN_ALLOW_ALL = bool(int(os.environ['CORS_ORIGIN_ALLOW_ALL']))
+    allowed_host = os.environ['CORS_ALLOWED_ORIGINS']
+    CORS_ALLOWED_ORIGINS  = ast.literal_eval(allowed_host)
+
+else:
+    CORS_ORIGIN_ALLOW_ALL = bool(int(os.getenv('CORS_ORIGIN_ALLOW_ALL')))
+    allowed_host = os.getenv('CORS_ALLOWED_ORIGINS')
+    CORS_ALLOWED_ORIGINS  =ast.literal_eval(allowed_host)
+
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'DELETE'
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
