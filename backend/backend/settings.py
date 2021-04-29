@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'apps.authentication',
     'apps.media',
     'apps.news',
+    'apps.app',
 ]
 
 MIDDLEWARE = [
