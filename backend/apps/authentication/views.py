@@ -59,8 +59,6 @@ class LoginViews(APIView):
         res = self.message(message, status_server, data)
         return Response(res, status = status_server)
 
-
-
 class CreateUsersView(APIView):
 
     permission_classes =  [IsAuthenticated]
@@ -92,3 +90,7 @@ class CreateUsersView(APIView):
         data = serializer.data
         res = self.message(message, status_server, data)
         return Response(res, status = status_server)
+
+class Health(APIView):
+    def get(self,request):
+        return Response("Healthy Check", status.HTTP_200_OK)
