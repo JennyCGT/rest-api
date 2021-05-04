@@ -155,7 +155,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+STATIC_ROOT = os.path.join(BASE_DIR,'static/')
 
 if 'RDS_DB_NAME' in os.environ:     
     CORS_ORIGIN_ALLOW_ALL = bool(int(os.environ['CORS_ORIGIN_ALLOW_ALL']))
